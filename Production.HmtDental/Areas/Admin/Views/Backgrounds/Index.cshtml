@@ -1,0 +1,62 @@
+﻿@model IEnumerable<Production.HmtDental.Models.Background>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+<div class="right_col" role="main">
+    <h1>Index</h1>
+
+    <p>
+        <a href="Admin/Backgrounds/Create">Create New</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Hotline)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Landline)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Slogan)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Address)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Email)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Hotline)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Landline)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Slogan)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Address)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    <td>
+                        <a href="/Admin/Backgrounds/Edit/@item.Id">Edit</a> |
+                        <a href="/Admin/Backgrounds/Detail/@item.Id">Details</a> |
+                        <a href="/Admin/Backgrounds/Delete/@item.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
